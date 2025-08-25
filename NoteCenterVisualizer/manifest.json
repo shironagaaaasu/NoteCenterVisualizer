@@ -1,0 +1,14 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/bsmg/BSIPA-MetadataFileSchema/master/Schema.json",
+  "id": "NoteCenterVisualizer",
+  "name": "NoteCenterVisualizer",
+  "author": "Shironagaaaasu",
+  "version": "0.0.1",
+  "description": "Display a sphere representing the center of the note at the note cut position",
+  "gameVersion": "1.40.4",
+  "dependsOn": {
+    "BSIPA": "^4.3.6",
+    "SiraUtil": "^3.2.1",
+    "BeatSaberMarkupLanguage": "^1.12.5"
+  }
+}

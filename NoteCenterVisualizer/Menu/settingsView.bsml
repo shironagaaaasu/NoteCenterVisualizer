@@ -1,0 +1,25 @@
+<bg xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
+    xsi:noNamespaceSchemaLocation='https://monkeymanboy.github.io/BSML-Docs/BSMLSchema.xsd'>
+	<vertical  child-expand-height='false' child-control-height='false' spacing='0'>
+        <toggle-setting value="Enabled" text="Enabled" apply-on-change="true" on-change="ChangeEnabled" />
+		
+		<toggle-setting value="InGame" text="In Game" apply-on-change="true" 
+						hover-hint="Whether or not to display the ball during play"/>
+		
+		<toggle-setting value="InMenu" text="In Menu" apply-on-change="true" on-change="ChangeInMenu"
+						hover-hint="Whether to display the sphere on the menu screen"/>
+		
+		<increment-setting value="MyHeight" text="Height" min="1.4" max="1.8" increment="0.01" 
+						   apply-on-change="true" on-change="ChangeHeight" hover-hint="Height setting"/>
+		
+		<increment-setting value="ZPosition" text="Z Position" min="0.5" max="1.5" increment="0.01" 
+						   apply-on-change="true" on-change="ChangeZPosition" hover-hint="Adjust sphere display position (Z coordinate)"/>
+		
+		<increment-setting value="SphereSize" text="Sphere Size" min="0.01" max="0.1" increment="0.01" 
+						   apply-on-change="true" on-change="ChangeSphereSize" hover-hint="Sphere size"/>
+		
+		<toggle-setting value="ShowPanel" text="Show Panel" apply-on-change="true" on-change="ChangeShowPanel"
+						hover-hint="Whether to display a panel between the sphere and the UI (hide the UI to make it easier to see the sphere)"/>
+		
+    </vertical>
+</bg>
