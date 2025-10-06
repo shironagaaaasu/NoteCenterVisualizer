@@ -30,11 +30,28 @@ namespace NoteCenterVisualizer.Menu
             set => PluginConfig.Instance.InMenu = value;
         }
 
+        [UIValue("AutoSetHeight")]
+        public bool AutoSetHeight
+        {
+            get => PluginConfig.Instance.AutoSetHeight;
+            set
+            {
+                PluginConfig.Instance.AutoSetHeight = value;
+                NotifyPropertyChanged(nameof(MyHeightActive));
+            }
+        }
+
         [UIValue("MyHeight")]
         public float MyHeight
         {
             get => PluginConfig.Instance.MyHeight;
             set => PluginConfig.Instance.MyHeight = value;
+        }
+
+        [UIValue("MyHeightActive")]
+        public bool MyHeightActive
+        {
+            get => !PluginConfig.Instance.AutoSetHeight;
         }
 
         [UIValue("ZPosition")]
@@ -74,6 +91,14 @@ namespace NoteCenterVisualizer.Menu
 
             SphereController.Instance.RefreshSpheres(isMenuScreen: true);
             SphereController.Instance.RefreshPlane(isMenuScreen: true);
+        }
+
+        [UIAction("ChangeAutoSetHeight")]
+        protected void ChangeAutoSetHeight(bool value)
+        {
+            PluginConfig.Instance.AutoSetHeight = value;
+
+            SphereController.Instance.RefreshSpheres(isMenuScreen: true);
         }
 
         [UIAction("ChangeHeight")]

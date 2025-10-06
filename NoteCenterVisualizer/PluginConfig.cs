@@ -17,7 +17,9 @@ namespace NoteCenterVisualizer
                 
         public virtual bool InMenu { get; set; } = true;
 
-        public virtual float MyHeight { get; set; } = 170f;
+        public virtual bool AutoSetHeight { get; set; } = true;
+
+		public virtual float MyHeight { get; set; } = 170f;
 
         public virtual float ZPosition { get; set; } = 0.9f;
 

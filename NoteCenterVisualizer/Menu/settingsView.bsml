@@ -5,12 +5,17 @@
 		
 		<toggle-setting value="InGame" text="In Game" apply-on-change="true" 
 						hover-hint="Whether or not to display the ball during play"/>
-		
+
 		<toggle-setting value="InMenu" text="In Menu" apply-on-change="true" on-change="ChangeInMenu"
 						hover-hint="Whether to display the sphere on the menu screen"/>
-		
-		<increment-setting value="MyHeight" text="Height" min="1.4" max="1.8" increment="0.01" 
-						   apply-on-change="true" on-change="ChangeHeight" hover-hint="Height setting"/>
+
+		<toggle-setting value="AutoSetHeight" text="Auto Height" apply-on-change="true" on-change="ChangeAutoSetHeight"
+						hover-hint="Whether to get the player height from in-game settings. Disable it to set the player height manually."/>
+
+		<vertical vertical-fit="PreferredSize" pad-left="3">
+			<increment-setting value="MyHeight" text="Height" min="1.4" max="1.8" increment="0.01"
+							   apply-on-change="true" on-change="ChangeHeight" hover-hint="Height setting" active="~MyHeightActive"/>
+		</vertical>
 		
 		<increment-setting value="ZPosition" text="Z Position" min="0.5" max="1.5" increment="0.01" 
 						   apply-on-change="true" on-change="ChangeZPosition" hover-hint="Adjust sphere display position (Z coordinate)"/>
