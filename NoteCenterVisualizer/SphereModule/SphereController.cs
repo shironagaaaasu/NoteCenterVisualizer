@@ -16,6 +16,8 @@ namespace NoteCenterVisualizer.SphereModule
         private GameObject frontPlane;
         private GameObject floorPlane;
 
+        public float GameHeight { get; set; } = 0.0f;
+
         public void RefreshSpheres(bool isMenuScreen)
         {
 
@@ -63,7 +65,8 @@ namespace NoteCenterVisualizer.SphereModule
             {
                 foreach (var y in yBasePositions)
                 {
-                    float yPosition = y + (PluginConfig.Instance.MyHeight / 2f);
+                    var playerHeight = PluginConfig.Instance.AutoSetHeight ? GameHeight : PluginConfig.Instance.MyHeight;
+                    float yPosition = y + (playerHeight / 2f);
 
                     var obj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 

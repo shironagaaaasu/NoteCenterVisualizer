@@ -145,6 +145,7 @@
     <Compile Include="Menu\NoteCenterVisualizerFlowCoordinator.cs" />
     <Compile Include="Menu\SettingsViewController.cs" />
     <Compile Include="Patches\MainFlowCoordinatorPatch.cs" />
+    <Compile Include="Patches\PlayerHeightSettingsControllerPatch.cs" />
     <Compile Include="Patches\SoloFreePlayFlowCoordinatorPatch.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="PluginConfig.cs" />
