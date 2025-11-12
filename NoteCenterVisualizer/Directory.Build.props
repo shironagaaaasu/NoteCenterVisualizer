@@ -2,6 +2,7 @@
 <!-- This file contains project properties used by the build. -->
 <Project>
 	<PropertyGroup>
+		<LangVersion>latest</LangVersion>
 		<ImportBSMTTargets>True</ImportBSMTTargets>
 		<BSMTProjectType>BSIPA</BSMTProjectType>
 	</PropertyGroup>
