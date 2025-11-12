@@ -11,7 +11,8 @@ namespace NoteCenterVisualizer.SphereModule
 
         // 座標設定
         private readonly float[] xPositions = [-0.9f, -0.3f, 0.3f, 0.9f];
-        private readonly float[] yBasePositions = [-0.05f, 0.5f, 1.0f];
+        //private readonly float[] yBasePositions = [-0.05f, 0.5f, 1.0f];
+        private readonly float[] yBasePositions = [0.85f, 1.4f, 1.9f];
         private readonly List<GameObject> spheres = new List<GameObject>();
         private GameObject frontPlane;
         private GameObject floorPlane;
@@ -61,12 +62,17 @@ namespace NoteCenterVisualizer.SphereModule
 
         public void CreateSpheres()
         {
+            var playerHeight = PluginConfig.Instance.AutoSetHeight ? GameHeight : PluginConfig.Instance.MyHeight;
+            float heightOffset = PlayerHeightToJumpOffsetYProvider.JumpOffsetYForPlayerHeight(playerHeight);
+
             foreach (var x in xPositions)
             {
                 foreach (var y in yBasePositions)
                 {
-                    var playerHeight = PluginConfig.Instance.AutoSetHeight ? GameHeight : PluginConfig.Instance.MyHeight;
-                    float yPosition = y + (playerHeight / 2f);
+                    //var playerHeight = PluginConfig.Instance.AutoSetHeight ? GameHeight : PluginConfig.Instance.MyHeight;
+                    //float yPosition = y + (playerHeight / 2f);
+
+                    float yPosition = y + heightOffset;
 
                     var obj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 
